@@ -1,1 +1,199 @@
+"use client";
+
+import { useState } from "react";
+import { Phone, Calendar, Globe, Workflow, Lightbulb, Search } from "lucide-react";
+
+export default function Home() {
+  return (
+    <div className="font-inter bg-white text-gray-900">
+      {/* NAV */}
+      <header className="fixed w-full z-50 bg-white shadow-sm">
+        <div className="max-w-7xl mx-auto flex justify-between items-center px-6 py-4">
+          <h1 className="font-bold text-xl text-gray-900">Detroit Digital Works</h1>
+          <nav className="space-x-6 hidden md:flex">
+            <a href="#services" className="hover:text-red-700">What I Build</a>
+            <a href="#visibility" className="hover:text-red-700">Visibility</a>
+            <a href="#process" className="hover:text-red-700">How It Works</a>
+            <a href="#about" className="hover:text-red-700">About</a>
+            <a href="#faq" className="hover:text-red-700">FAQ</a>
+            <a href="#contact" className="hover:text-red-700">Contact</a>
+          </nav>
+          <a href="#contact" className="ml-6 bg-red-700 text-white px-4 py-2 rounded-lg hover:bg-red-800">
+            Get My Free Idea Plan
+          </a>
+        </div>
+      </header>
+
+      {/* HERO */}
+      <section className="relative bg-[url('/detroit-street.jpg')] bg-cover bg-center h-[90vh] flex items-center text-white">
+        <div className="absolute inset-0 bg-black bg-opacity-50"></div>
+        <div className="relative max-w-3xl mx-auto px-6 text-center">
+          <h2 className="text-4xl md:text-6xl font-bold mb-6">Stop Losing Customers. Start Building Ideas.</h2>
+          <p className="text-lg md:text-xl mb-8">
+            Born and raised in Detroit, I help entrepreneurs and small business owners fix what’s broken and bring their ideas to life. 
+            From missed calls to app dreams, we’ll build something that works.
+          </p>
+          <a href="#contact" className="bg-red-700 text-white px-6 py-3 rounded-lg text-lg font-semibold hover:bg-red-800">
+            Get My Free Idea Plan
+          </a>
+        </div>
+      </section>
+
+      {/* SERVICES */}
+      <section id="services" className="max-w-7xl mx-auto px-6 py-20">
+        <h3 className="text-3xl font-bold text-center mb-12">What I Build</h3>
+        <div className="grid md:grid-cols-3 gap-8">
+          <ServiceCard 
+            icon={<Phone className="w-8 h-8 text-red-700" />}
+            title="Missed Calls → Saved Leads"
+            text="If you can’t pick up, a system texts back instantly, captures details, and books next steps—so the job doesn’t walk away."
+          />
+          <ServiceCard 
+            icon={<Phone className="w-8 h-8 text-red-700" />}
+            title="Lead Capture 24/7"
+            text="Stop relying on voicemail. Every inquiry gets logged, responded to, and followed up—even while you’re working a job or off the clock."
+          />
+          <ServiceCard 
+            icon={<Globe className="w-8 h-8 text-red-700" />}
+            title="A Site That Works"
+            text="Clean, modern one-page websites that make you easy to find, trust, and contact—without the fluff."
+          />
+          <ServiceCard 
+            icon={<Workflow className="w-8 h-8 text-red-700" />}
+            title="Automate Repetitive Tasks"
+            text="Too many hours on scheduling, invoices, reminders? I build simple automations that handle the busywork so you can focus on growth."
+          />
+          <ServiceCard 
+            icon={<Lightbulb className="w-8 h-8 text-red-700" />}
+            title="Bring Ideas to Life"
+            text="Got an idea for an app, internal tool, or new revenue stream? I’ll map it, prototype it, and build a real, usable version."
+          />
+        </div>
+      </section>
+
+      {/* VISIBILITY */}
+      <section id="visibility" className="bg-gray-50 py-20 px-6">
+        <div className="max-w-5xl mx-auto text-center">
+          <Search className="w-12 h-12 mx-auto text-red-700 mb-6" />
+          <h3 className="text-3xl font-bold mb-4">Be Found in the New Search Era</h3>
+          <p className="text-lg mb-6">
+            Search is changing. Customers aren’t just typing into Google—they’re using voice assistants and AI search to ask in their own words. 
+            I build websites and systems optimized to show up in those new searches, so Detroit businesses stay visible and win customers.
+          </p>
+          <ul className="space-y-2 text-left max-w-md mx-auto">
+            <li>✔ Show up in local + conversational searches</li>
+            <li>✔ Pages built for plain-English questions (voice + AI)</li>
+            <li>✔ Clean structure, fast load, mobile-first</li>
+            <li>✔ Detroit-focused content and keywords</li>
+          </ul>
+        </div>
+      </section>
+
+      {/* HOW IT WORKS */}
+      <section id="process" className="max-w-7xl mx-auto px-6 py-20">
+        <h3 className="text-3xl font-bold text-center mb-12">How It Works</h3>
+        <div className="grid md:grid-cols-3 gap-8">
+          <ProcessStep step="1" title="Talk" text="Share your problem or idea in a free 30-minute call." />
+          <ProcessStep step="2" title="Plan" text="I sketch the smallest build that delivers results quickly." />
+          <ProcessStep step="3" title="Build" text="I create it, set it up, and hand you something real." />
+        </div>
+        <p className="text-center mt-8 text-gray-600">
+          Not a fit? No pressure. You’ll still leave with clarity and a plan.
+        </p>
+      </section>
+
+      {/* ABOUT */}
+      <section id="about" className="bg-gray-50 py-20 px-6">
+        <div className="max-w-5xl mx-auto grid md:grid-cols-2 gap-12 items-center">
+          <img src="/founder-placeholder.jpg" alt="Founder Johnny Gaines" className="rounded-xl shadow-md" />
+          <div>
+            <h3 className="text-3xl font-bold mb-4">Detroit Roots. Builder’s Mindset.</h3>
+            <p className="mb-4">
+              I’m <strong>Johnny Gaines</strong>, the Idea Engineer behind Detroit Digital Works. I grew up here, and I know what it’s like to hustle hard and still miss opportunities.
+            </p>
+            <p className="mb-4">
+              I’m not here to drown you in tech talk. I’m here to listen, see where money and time are slipping away, and build outcomes that matter.
+            </p>
+            <p>When Detroit businesses thrive, our community thrives.</p>
+          </div>
+        </div>
+      </section>
+
+      {/* FAQ */}
+      <section id="faq" className="max-w-5xl mx-auto px-6 py-20">
+        <h3 className="text-3xl font-bold text-center mb-12">FAQ</h3>
+        <div className="space-y-6">
+          <FAQ q="Do I need to know AI?" a="No. You don’t need to touch the tools. You tell me the destination, I handle the ride." />
+          <FAQ q="What if I just need a website?" a="Perfect. I build clean, modern one-pagers that are easy to trust and easy to contact." />
+          <FAQ q="Can you build custom stuff?" a="Yes—apps, internal tools, workflows. We’ll map it and build a version you can use." />
+          <FAQ q="How fast can we start?" a="We’ll talk this week; you’ll get a plan within a few days. Small builds launch fast." />
+          <FAQ q="What does it cost?" a="We’ll scope the smallest thing that moves the needle. Fixed build fee. Ongoing support only if you want it." />
+        </div>
+      </section>
+
+      {/* CONTACT */}
+      <section id="contact" className="bg-red-700 py-20 px-6 text-white">
+        <div className="max-w-3xl mx-auto text-center">
+          <h3 className="text-3xl font-bold mb-4">Tell Me What You’re Trying to Solve</h3>
+          <p className="mb-8">Two minutes now can save you weeks of lost customers later.</p>
+          <form className="grid gap-4 text-gray-900 bg-white p-6 rounded-lg shadow-md">
+            <input type="text" placeholder="Name" className="p-3 border rounded-lg" />
+            <input type="email" placeholder="Email" className="p-3 border rounded-lg" />
+            <input type="tel" placeholder="Phone" className="p-3 border rounded-lg" />
+            <textarea placeholder="What’s going on?" className="p-3 border rounded-lg"></textarea>
+            <div className="flex space-x-4">
+              <label className="flex items-center space-x-2">
+                <input type="radio" name="type" /> <span>Fix a Problem</span>
+              </label>
+              <label className="flex items-center space-x-2">
+                <input type="radio" name="type" /> <span>Build an Idea</span>
+              </label>
+            </div>
+            <button type="submit" className="bg-red-700 text-white px-6 py-3 rounded-lg font-semibold hover:bg-red-800">
+              Get My Free Idea Plan
+            </button>
+          </form>
+        </div>
+      </section>
+
+      {/* FOOTER */}
+      <footer className="bg-gray-900 text-gray-400 py-6 text-center">
+        <p>You don’t have to figure it all out. You just have to start.</p>
+        <p className="mt-2">Detroit Digital Works — Built in Detroit for people who build.</p>
+      </footer>
+    </div>
+  );
+}
+
+function ServiceCard({ icon, title, text }) {
+  return (
+    <div className="p-6 border rounded-xl shadow-sm hover:shadow-lg transition">
+      <div className="mb-4">{icon}</div>
+      <h4 className="text-xl font-semibold mb-2">{title}</h4>
+      <p className="text-gray-600">{text}</p>
+    </div>
+  );
+}
+
+function ProcessStep({ step, title, text }) {
+  return (
+    <div className="text-center p-6 border rounded-xl">
+      <div className="text-4xl font-bold text-red-700 mb-4">{step}</div>
+      <h4 className="text-xl font-semibold mb-2">{title}</h4>
+      <p className="text-gray-600">{text}</p>
+    </div>
+  );
+}
+
+function FAQ({ q, a }) {
+  const [open, setOpen] = useState(false);
+  return (
+    <div>
+      <button onClick={() => setOpen(!open)} className="w-full text-left flex justify-between items-center py-3 font-medium">
+        {q} <span>{open ? "−" : "+"}</span>
+      </button>
+      {open && <p className="pl-4 text-gray-600">{a}</p>}
+    </div>
+  );
+}
 
